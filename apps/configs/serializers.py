@@ -51,4 +51,11 @@ class ConfigListSerializer(serializers.ModelSerializer):  # ModelSerializer和mo
            "last_download": {"read_only": True},
        }
 
+class ConfigSerializer(serializers.ModelSerializer):
+    """
+    """
+    class Meta:
+        model = Config
+        fields = '__all__'
+
 

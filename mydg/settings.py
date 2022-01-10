@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'configs.apps.ConfigsConfig',
     'polls.apps.PollsConfig',
+    'questions.apps.QuestionsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

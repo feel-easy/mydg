@@ -1,8 +1,9 @@
 from rest_framework.views import APIView
+from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Config
-from .serializers import ConfigListSerializer
+from .serializers import ConfigListSerializer, ConfigSerializer
 
 
 class ConfigView(APIView):
@@ -17,3 +18,7 @@ class ConfigView(APIView):
            serializer.save()  # 没问题的话则保存对象
            return Response({"data": "创建完成"}, status=status.HTTP_201_CREATED)
        return Response({"error": "表单错误"}, status=status.HTTP_400_BAD_REQUEST)
+
+class ConfigViewSet(ModelViewSet):
+    queryset = Config.objects.all()
+    serializer_class = ConfigSerializer
